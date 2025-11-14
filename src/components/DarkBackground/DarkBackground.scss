@@ -1,0 +1,79 @@
+
+.dark-background {
+  position: relative;
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("../../assets/dark-waves.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.dark-background__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+}
+
+
+
+
+.dark-background--top {
+  transform: scaleY(-1); 
+}
+
+
+.dark-background--top .dark-background__inner {
+  transform: scaleY(-1); 
+}
+
+
+
+@media (max-width: 480px) {
+  .dark-background,
+  .dark-background--top { 
+    background-image: url("../../assets/waves-mobile-final.svg");
+    background-size: cover;
+    background-position: center bottom;
+    min-height: 40vh;
+  }
+
+ 
+  .dark-background--top {
+    transform: scaleY(-1);
+  }
+
+ 
+  .dark-background--top .dark-background__inner {
+    transform: scaleY(-1);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .dark-background {
+    padding: 3.5rem 2rem;
+    min-height: 105vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .dark-background {
+    padding: 4.5rem 3rem;
+    min-height: 110vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .dark-background {
+    padding: 6rem 4rem;
+    min-height: 120vh;
+  }
+}

@@ -1,0 +1,31 @@
+@use "../../styles/variables.scss" as *;
+
+.color-background {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background:
+    radial-gradient(circle at 0% 0%,        $colorwashfirst 0%, rgba($colorwashfirst, 0.85) 40%, transparent 85%),
+    radial-gradient(circle at 100% 0%,      $colorwashsecond 0%, rgba($colorwashsecond, 0.85) 40%, transparent 85%),
+    radial-gradient(circle at 0% 100%,      $colorwashthird 0%, rgba($colorwashthird, 0.85) 40%, transparent 85%),
+    radial-gradient(circle at 100% 100%,    $colorwashfourth 0%, rgba($colorwashfourth, 0.85) 40%, transparent 85%),
+    radial-gradient(circle at 50% 50%,      $colorwashfifth 0%, rgba($colorwashfifth, 0.9) 50%, transparent 90%),
+    #dcd6ff;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .color-background {
+    background:
+      radial-gradient(circle at 20% 0%,      $colorwashfirst 0%, rgba($colorwashfirst, 0.85) 40%, transparent 85%),
+      radial-gradient(circle at 80% 0%,      $colorwashsecond 0%, rgba($colorwashsecond, 0.85) 40%, transparent 85%),
+      radial-gradient(circle at 0% 100%,     $colorwashthird 0%, rgba($colorwashthird, 0.85) 40%, transparent 85%),
+      radial-gradient(circle at 100% 100%,   $colorwashfourth 0%, rgba($colorwashfourth, 0.85) 40%, transparent 85%),
+      radial-gradient(circle at 50% 60%,     $colorwashfifth 0%, rgba($colorwashfifth, 0.9) 50%, transparent 90%),
+      #dcd6ff;
+  }
+}
