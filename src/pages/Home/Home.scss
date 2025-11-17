@@ -1,3 +1,38 @@
+@use "../../styles/variables.scss" as *;
+
+.home-hero {
+  width: 100%;
+  min-height: 80vh; 
+  padding: 2rem;
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  gap: 3rem;             
+  margin-top: -10rem; 
+
+  .home-logo-description {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;              
+  }
+
+  .logoname {
+    max-width: 250px;   
+  }
+
+  .home-text {
+    font-size: 1rem;      
+    line-height: 1.4;
+  }
+
+  .profile-image {
+    max-width: 350px;       
+    flex-shrink: 0;         
+  }
+}
+
 .home-next-section {
   width: 100%;
   height: 60vh;
@@ -7,3 +42,5 @@
   justify-content: center;
   align-items: center;
 }
+
+@import './Homemedia.scss';
