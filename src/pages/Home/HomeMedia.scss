@@ -1,0 +1,65 @@
+/* Desktop and tablet: hide mobile text */
+.home-text-mobile {
+  display: none;
+}
+
+/* Tablet: shrink elements, keep row layout */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .home-hero {
+    min-height: 70vh;
+    gap: 2rem;
+
+    .home-logo-description {
+      .logoname {
+        max-width: 180px;
+      }
+
+      .home-text {
+        font-size: 0.9rem;
+      }
+    }
+
+    .profile-image {
+      max-width: 250px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero {
+    flex-direction: column;
+    align-items: center;  
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    margin-top: 0;       
+    min-height: auto;     
+
+    
+    .home-logo-description {
+      .home-text {
+        display: none;
+      }
+
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      gap: 0.5rem;
+    }
+
+    
+    .profile-image {
+      order: 2;
+      max-width: 200px;
+    }
+
+    
+    .home-text-mobile {
+      display: block;
+      order: 3;
+      font-size: 0.9rem;
+      max-width: 90%;
+      text-align: left;
+      margin-top: 0.5rem;
+    }
+  }
+}
