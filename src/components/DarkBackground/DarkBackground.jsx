@@ -3,7 +3,7 @@ import "./DarkBackground.scss";
 
 export default function DarkBackground({
   children,
-  wavePosition = "bottom", // "bottom" o "top"
+  wavePosition = "bottom", // "bottom" or "top"
 }) {
   const positionClass =
     wavePosition === "top"

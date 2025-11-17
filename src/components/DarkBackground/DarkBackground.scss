@@ -1,4 +1,3 @@
-
 .dark-background {
   position: relative;
   min-height: 100vh;
@@ -7,15 +6,11 @@
   align-items: center;
   justify-content: center;
 
-  background-image: url("../../assets/wavedown.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center bottom;
-
   color: #ffffff;
   overflow: hidden;
 }
 
+/* Inner content */
 .dark-background__inner {
   position: relative;
   z-index: 1;
@@ -23,40 +18,38 @@
   max-width: 1200px;
 }
 
+/* Bottom wave (default) */
+.dark-background--bottom {
+  background-image: url("../../assets/wavedown.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
 
-
-
+/* Top wave */
 .dark-background--top {
-  transform: scaleY(-1); 
+  background-image: url("../../assets/waveup.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
 }
 
-
-.dark-background--top .dark-background__inner {
-  transform: scaleY(-1); 
-}
-
-
-
+/* Mobile adjustments */
 @media (max-width: 480px) {
-  .dark-background,
-  .dark-background--top { 
+  .dark-background--bottom {
     background-image: url("../../assets/waves-mobile-final.svg");
-    background-size: cover;
     background-position: center bottom;
     min-height: 40vh;
   }
 
- 
   .dark-background--top {
-    transform: scaleY(-1);
-  }
-
- 
-  .dark-background--top .dark-background__inner {
-    transform: scaleY(-1);
+    background-image: url("../../assets/waveup.svg"); /* Or mobile version if needed */
+    background-position: center top;
+    min-height: 40vh;
   }
 }
 
+/* Tablet adjustments */
 @media (min-width: 481px) and (max-width: 767px) {
   .dark-background {
     padding: 3.5rem 2rem;
@@ -64,6 +57,7 @@
   }
 }
 
+/* Desktop adjustments */
 @media (min-width: 768px) and (max-width: 1199px) {
   .dark-background {
     padding: 4.5rem 3rem;
