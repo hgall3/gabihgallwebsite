@@ -1,46 +1,185 @@
 @use "../../styles/variables.scss" as *;
 
+/* ------------------------------ */
+/*           HERO SECTION         */
+/* ------------------------------ */
 .home-hero {
   width: 100%;
-  min-height: 80vh; 
+  min-height: 80vh;
   padding: 2rem;
   display: flex;
-  justify-content: center; 
-  align-items: center;    
-  gap: 3rem;             
-  margin-top: -10rem; 
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: -10rem;
 
   .home-logo-description {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 1rem;              
+    gap: 1rem;
   }
 
   .logoname {
-    max-width: 250px;   
+    max-width: 250px;
   }
 
   .home-text {
-    font-size: 1rem;      
+    font-size: 1rem;
     line-height: 1.4;
   }
 
   .profile-image {
-    max-width: 350px;       
-    flex-shrink: 0;         
+    max-width: 350px;
+    flex-shrink: 0;
+  }
+
+  .home-text-mobile {
+    display: none;
   }
 }
 
-.home-next-section {
-  width: 100%;
-  height: 60vh;
-  padding: 4rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* ------------------------------ */
+/*           ABOUT ME             */
+/* ------------------------------ */
+.about-me {
+  position: relative;
+  overflow: visible;
+
+  /* Hace que las olas del DarkBackground anterior entren en esta sección */
+  margin-top: -12rem;
+
+  /* Espacio interno para que los SVG respiren */
+  padding-top: 14rem;
+  padding-bottom: 14rem;
 }
 
-@import './Homemedia.scss';
+.about-content {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ------------------------------ */
+/*       LEFT & RIGHT FRAMES      */
+/* ------------------------------ */
+
+.frame-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Texto encima del SVG */
+.frame-text {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  text-align: center;
+
+  .frame-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .frame-paragraph {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* Ajuste especial para el frame derecho */
+.right-text {
+  top: 18%;
+}
+
+/* ------------------------------ */
+/*        CONNECT / SOCIAL        */
+/* ------------------------------ */
+.connect-block {
+  margin-top: 2rem;
+  text-align: center;
+
+  .connect-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    .social-btn {
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+/* ------------------------------ */
+/*        UTILITIES (global)      */
+/* ------------------------------ */
+
+.size-md {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+}
+
+.is-centered {
+  margin: 0 auto;
+}
+
+/* ------------------------------ */
+/*           RESPONSIVE           */
+/* ------------------------------ */
+
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+
+  .frame-text {
+    top: 22%;
+    width: 80%;
+  }
+
+  .connect-block {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .frame-text {
+    top: 24%;
+    width: 85%;
+  }
+
+  .frame-title {
+    font-size: 1.2rem;
+  }
+
+  .frame-paragraph {
+    font-size: 0.9rem;
+  }
+}
