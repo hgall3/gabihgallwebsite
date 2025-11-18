@@ -1,10 +1,10 @@
 import React from 'react';
-import SocialLink from "../SocialLink/SocialLink";
+import SocialLink from '../Sociallink/SocialLink'; //error here why???
 
 // 1. Import your SVG files (adjust paths as necessary)
-import InstagramSVG from './path/to/instagram.svg';
-import GithubSVG from './path/to/github.svg';
-import LinkedInSVG from './path/to/linkedin.svg';
+import InstagramSVG from '../../../../assets/ig.svg';
+import GithubSVG from '../../../../assets/github.svg';
+import LinkedInSVG from '../../../../assets/LinkedIn.svg';
 
 const SocialMediaLinks = () => {
   // 2. Define the data for your links
@@ -17,13 +17,13 @@ const SocialMediaLinks = () => {
     },
     {
       id: 2,
-      href: 'https://github.com/your-github-handle', // Example GitHub URL
+      href: 'https://https://github.com/hgall3', // Example GitHub URL
       svgSrc: GithubSVG,
       altText: 'GitHub',
     },
     {
       id: 3,
-      href: 'https://www.linkedin.com/in/your-linkedin-handle', // Example LinkedIn URL
+      href: 'https://www.linkedin.com/in/gabrielagallegosanda/', // Example LinkedIn URL
       svgSrc: LinkedInSVG,
       altText: 'LinkedIn',
     },
