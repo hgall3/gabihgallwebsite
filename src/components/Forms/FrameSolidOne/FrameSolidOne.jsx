@@ -1,6 +1,6 @@
 import React from "react";
 import "./FrameSolidOne.scss";
-import FormOneSvg from "../../../assets/Frame123.svg";
+import FormOneSvg from "../../../assets/Frame1212.svg";
 
 
 export default function FormOne ({ className = "", alt = "about me frame" }) {
