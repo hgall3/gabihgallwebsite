@@ -31,7 +31,10 @@ export default function Home() {
        <FormOne className="home-form-one" alt="Decorative frame 1"/>
        <div className="form-two-group"> 
          <FormTwo className="home-form-two" alt="Decorative frame 2"/>
-         <p>hola</p>
+         <div className="socials-group">
+         <p>Lets Connect!</p>
+         
+         </div>
        </div>
         
         
