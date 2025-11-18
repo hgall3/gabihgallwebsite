@@ -2,6 +2,8 @@ import React from "react";
 import DarkBackground from "../../components/DarkBackground/DarkBackground";
 import HeroPic from "../../components/HeroPic/HeroPic";
 import LogoName from "../../components/LogoName/LogoName"; 
+import FormOne from "../../components/Forms/FrameSolidOne/FrameSolidOne";
+import FormTwo from "../../components/Forms/FrameSolidTwo/FrameSolidTwo";
 import "./Home.scss";
 
 export default function Home() {
@@ -26,6 +28,15 @@ export default function Home() {
 
       
       <section className="home-next-section">
+       <FormOne className="home-form-one" alt="Decorative frame 1"/>
+       <div className="form-two-group"> 
+         <FormTwo className="home-form-two" alt="Decorative frame 2"/>
+         <p>hola</p>
+       </div>
+        
+        
+
+
         
       </section>
 
