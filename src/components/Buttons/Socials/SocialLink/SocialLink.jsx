@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Define the component that takes props for the link and the image source
-const SocialLink = ({ href, svgSrc, altText, size = '30px' }) => {
+const SocialLink = ({ href, svgSrc, altText, size = '60px' }) => {
   return (
     <a
       href={href}

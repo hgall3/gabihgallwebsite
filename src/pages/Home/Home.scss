@@ -42,22 +42,17 @@
   align-items: center;
 }
 
-// --- FIX: Define the size on the Group Container ---
+
 .form-two-group {
   display: flex;
   flex-direction: column; 
   align-items: center;  
-  
-  // 1. **Crucial:** Set the desired size (40%) on the container.
   max-width: 40%;
-  width: 100%; // Ensures it is responsive up to the max-width
-  
-  // Optional: To prevent the group from shrinking less than 40%
+  width: 100%; 
   flex-basis: 40%;
   flex-shrink: 0; 
 }
 
-// --- Frame Component Styles ---
 .home-form-one, .home-form-two {
   margin-top: 2rem;
   width: 100%;
@@ -65,23 +60,22 @@
 }
 
 .home-form-two {
-  max-width: 100%; /* Only FormOne retains its original max-width setting */
+  max-width: 100%;
   margin-top: -20rem;
   z-index: 10;
 }
 .home-form-one{
   max-width: 50%;
 }
-// NOTE: You don't need a separate block for .home-form-two max-width anymore, 
-// because its size is controlled by its parent, .form-two-group.
-
-/* Style the new <p> tag */
 .form-two-group p {
     margin-top: 1rem;
     font-size: 1.2rem;
     text-align: center;
 }
 
+.socials-group{
+ margin-top: 5rem;
+}
 
 
 @import './Homemedia.scss';

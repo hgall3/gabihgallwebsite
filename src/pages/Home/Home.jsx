@@ -4,6 +4,7 @@ import HeroPic from "../../components/HeroPic/HeroPic";
 import LogoName from "../../components/LogoName/LogoName"; 
 import FormOne from "../../components/Forms/FrameSolidOne/FrameSolidOne";
 import FormTwo from "../../components/Forms/FrameSolidTwo/FrameSolidTwo";
+import SocialMediaLinks from "../../components/Buttons/Socials/SocialMediaLinks/SocialMediaLinks";
 import "./Home.scss";
 
 export default function Home() {
@@ -25,22 +26,15 @@ export default function Home() {
            </p>
         </div>
       </DarkBackground>
-
-      
       <section className="home-next-section">
        <FormOne className="home-form-one" alt="Decorative frame 1"/>
        <div className="form-two-group"> 
          <FormTwo className="home-form-two" alt="Decorative frame 2"/>
          <div className="socials-group">
-         <p>Lets Connect!</p>
-         
+         <p><h2>Lets Connect!</h2></p>
+         <SocialMediaLinks />
          </div>
-       </div>
-        
-        
-
-
-        
+       </div>  
       </section>
 
       
