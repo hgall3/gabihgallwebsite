@@ -2,6 +2,7 @@
 import React from "react";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import "./ProjectCardStack.scss"; // estilos opcionales
+import CodeHappen from "../../assets/CodeHappens.svg";
 
 export default function ProjectCardStack() {
   // Aquí defines las tarjetas con sus props personalizados
@@ -13,7 +14,7 @@ export default function ProjectCardStack() {
       role: "UI/UX Design · Web Development",
       description:
         "Plataforma interactiva con enfoque educativo para explicar procesos técnicos.",
-      imageSrc: "/images/projects/codehappen.png",
+      imageSrc: CodeHappen, 
       imageAlt: "Code Happen preview",
       cardBgColor: "#959595",
       leftBgColor: "#B890B8",
