@@ -1,10 +1,9 @@
 import React from 'react';
 import SocialLink from '../Sociallink/SocialLink'; //error here why???
-
-// 1. Import your SVG files (adjust paths as necessary)
 import InstagramSVG from '../../../../assets/ig.svg';
 import GithubSVG from '../../../../assets/github.svg';
 import LinkedInSVG from '../../../../assets/LinkedIn.svg';
+import BehanceSVG from '../../../../assets/behance.svg';
 
 const SocialMediaLinks = () => {
   // 2. Define the data for your links
@@ -12,8 +11,8 @@ const SocialMediaLinks = () => {
     {
       id: 1,
       href: 'https://www.instagram.com/g.hgall/',
-      svgSrc: InstagramSVG,
-      altText: 'Instagram',
+      svgSrc: BehanceSVG,
+      altText: 'Behance',
     },
     {
       id: 2,
