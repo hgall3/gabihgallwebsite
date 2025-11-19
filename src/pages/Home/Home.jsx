@@ -10,7 +10,6 @@ import "./Home.scss";
 export default function Home() {
   return (
     <>
-      
       <DarkBackground wavePosition="bottom">
         <div className="home-hero">
           <div className="profile-image">
