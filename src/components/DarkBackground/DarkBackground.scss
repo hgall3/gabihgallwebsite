@@ -10,15 +10,14 @@
   overflow: hidden;
 }
 
-/* Inner content */
+
 .dark-background__inner {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1200px;
 }
 
-/* Bottom wave (default) */
+
 .dark-background--bottom {
   background-image: url("../../assets/wavedown.svg");
   background-repeat: no-repeat;
@@ -26,7 +25,6 @@
   background-position: center bottom;
 }
 
-/* Top wave */
 .dark-background--top {
   background-image: url("../../assets/waveup.svg");
   background-repeat: no-repeat;
@@ -34,7 +32,7 @@
   background-position: center top;
 }
 
-/* Mobile adjustments */
+
 @media (max-width: 480px) {
   .dark-background--bottom {
     background-image: url("../../assets/waves-mobile-final.svg");
@@ -43,31 +41,28 @@
   }
 
   .dark-background--top {
-    background-image: url("../../assets/waveup.svg"); /* Or mobile version if needed */
+    background-image: url("../../assets/waveup.svg"); 
     background-position: center top;
     min-height: 40vh;
   }
 }
 
-/* Tablet adjustments */
+
 @media (min-width: 481px) and (max-width: 767px) {
   .dark-background {
-    padding: 3.5rem 2rem;
     min-height: 105vh;
   }
 }
 
-/* Desktop adjustments */
+
 @media (min-width: 768px) and (max-width: 1199px) {
   .dark-background {
-    padding: 4.5rem 3rem;
     min-height: 110vh;
   }
 }
 
 @media (min-width: 1200px) {
   .dark-background {
-    padding: 6rem 4rem;
     min-height: 120vh;
   }
 }

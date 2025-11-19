@@ -5,6 +5,7 @@ import LogoName from "../../components/LogoName/LogoName";
 import FormOne from "../../components/Forms/FrameSolidOne/FrameSolidOne";
 import FormTwo from "../../components/Forms/FrameSolidTwo/FrameSolidTwo";
 import SocialMediaLinks from "../../components/Buttons/Socials/SocialMediaLinks/SocialMediaLinks";
+import Marquee from "../../components/Marquee/Marquee";
 import "./Home.scss";
 
 export default function Home() {
@@ -38,7 +39,8 @@ export default function Home() {
 
       
       <DarkBackground wavePosition="top">
-        <div className="home-hero">
+        <Marquee />
+        <div className="home-projects">
           
         </div>
       </DarkBackground>

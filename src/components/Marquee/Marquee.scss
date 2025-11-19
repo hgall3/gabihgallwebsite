@@ -1,0 +1,35 @@
+.marquee {
+  width: 100vw; /* ← OCUPA TODO EL VIEWPORT */
+  overflow: hidden;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.marquee-track {
+  display: flex;
+  
+
+  width: max-content;       /* ← PERMITE QUE EL TRACK SEA MÁS ANCHO QUE LA PANTALLA */
+  will-change: transform;
+
+  animation: marquee-move 18s linear infinite;
+  /* ← ANIMACIÓN INFINITA SIN INICIO NI FIN */
+}
+
+.marquee-item {
+  width: 300px;    /* tamaño del svg */
+  flex-shrink: 0;  /* evita que se achique */
+  opacity: 0.9;
+}
+
+/* ANIMACIÓN: IZQUIERDA → DERECHA */
+@keyframes marquee-move {
+  from {
+    transform: translateX(-50%); 
+    /* ← COMIENZA A MITAD DEL TRACK (loop perfecto) */
+  }
+  to {
+    transform: translateX(0%);   
+    /* ← TERMINA VOLVIENDO A LA POSICIÓN ORIGINAL */
+  }
+}
