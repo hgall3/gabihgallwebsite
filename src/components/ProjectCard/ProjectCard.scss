@@ -1,0 +1,124 @@
+@use "../../styles/variables.scss" as *;
+
+.project-card {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 80%;
+  background: #959595;
+  border-radius: 40px;
+
+  /* ⬇️ SOLO padding horizontal, así la columna izquierda toca arriba/abajo */
+  padding-right: 2rem;
+
+  box-shadow: 8px 8px 30px rgba(133, 117, 139, 0.284);
+}
+
+/* ⬇️ Columna izquierda — toca arriba y abajo */
+.project-card__left {
+  flex: 0 0 28%;
+  background: $colorwashfirst; // #B890B8
+  border-radius: 40px 0 80px 40px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+/* Títulos */
+.project-card__title {
+  font-size: 1.8rem;
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 0;
+}
+
+.project-card__year {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.project-card__role {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* ⬇️ Columna central */
+.project-card__middle {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 1.5rem; /* añadimos padding aquí, no en el card */
+}
+
+.project-card__description {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.project-card__socials {
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+  
+}
+
+/* ⬇️ Columna derecha */
+.project-card__right {
+  flex: 0 0 32%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem 0; /* espacio interno arriba/abajo */
+}
+
+/* Imagen */
+.project-card__image-wrapper {
+  background: #f5f5f8;
+  border-radius: 24px;
+  padding: 0.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card__image {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+}
+
+/* CRUD buttons */
+.project-card__crud {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* ⬇️ Responsive */
+@media (max-width: 900px) {
+  .project-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .project-card__left {
+    flex-basis: auto;
+    border-radius: 30px 30px 80px 80px;
+    height: auto; /* se reajusta en mobile */
+  }
+
+  .project-card__right {
+    flex-basis: auto;
+    padding: 1rem 0;
+  }
+}

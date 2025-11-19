@@ -6,6 +6,8 @@ import FormOne from "../../components/Forms/FrameSolidOne/FrameSolidOne";
 import FormTwo from "../../components/Forms/FrameSolidTwo/FrameSolidTwo";
 import SocialMediaLinks from "../../components/Buttons/Socials/SocialMediaLinks/SocialMediaLinks";
 import Marquee from "../../components/Marquee/Marquee";
+import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import ProjectCardStack from "../../components/ProjectCard/ProjectCardStack";
 import "./Home.scss";
 
 export default function Home() {
@@ -41,7 +43,7 @@ export default function Home() {
       <DarkBackground wavePosition="top">
         <Marquee />
         <div className="home-projects">
-          
+          <ProjectCardStack/>  
         </div>
       </DarkBackground>
     </>
