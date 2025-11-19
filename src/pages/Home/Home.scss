@@ -25,6 +25,8 @@
   .home-text {
     font-size: 1rem;      
     line-height: 1.4;
+    color: white;
+    font-family: $font-title;
   }
 
   .profile-image {
@@ -88,20 +90,29 @@ h2 {
   font-family: $font-subtitle
 }
 
-/* ⬇️ Marquee spacing */
+
 .marquee {
-  margin-top: 18rem;  // ← ajusta qué tan abajo empieza el marquee
-  margin-bottom: 5rem; // ← espacio entre el marquee y las project cards
+  margin-top: 18rem; 
+  margin-bottom: 5rem; 
+}
+@media (min-width: 1500px) {
+  .marquee {
+    margin-top: 38rem; 
+    margin-bottom: 10rem;  
+  }
 }
 
-/* ⬇️ Contenedor de ProjectCardStack */
+
 .home-projects {
   width: 100%;
-  min-height: 100vh;              // ← controla cuánta altura tiene la sección de proyectos
+  min-height: 100vh;
+  padding-bottom: 15rem;             
   display: flex;
-  justify-content: center;       // ← centra el ProjectCardStack horizontalmente
-  align-items: center;           // ← centra el ProjectCardStack verticalmente
-  margin-top: 1rem;              // ← empuja todo el bloque de proyectos más abajo si lo necesitas
+  justify-content: center;       
+  align-items: center;           
+  margin-top: 1rem;              
 }
+
+
 
 @import './Homemedia.scss';
