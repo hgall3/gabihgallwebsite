@@ -1,13 +1,15 @@
+.project-card-stack-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+ 
+}
+
 .project-card-stack {
   display: flex;
   flex-direction: column;
   gap: 2.5rem; 
-  width: 80%;
+  width: 100%;
   display: flex;
   align-items: center;
-}
-@media (min-width: 768px) {
-  .project-card-stack {
-    gap: 3.5rem; 
-  }
 }
