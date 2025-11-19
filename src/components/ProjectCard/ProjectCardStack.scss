@@ -3,6 +3,8 @@
   flex-direction: column;
   gap: 2.5rem; 
   width: 80%;
+  display: flex;
+  align-items: center;
 }
 @media (min-width: 768px) {
   .project-card-stack {

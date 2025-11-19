@@ -40,8 +40,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 4rem; // ← ajusta el espacio debajo de esta sección (afecta qué tan abajo empieza el marquee)
 }
-
 
 .form-two-group {
   display: flex;
@@ -64,20 +64,22 @@
   margin-top: -20rem;
   z-index: 10;
 }
+
 .home-form-one{
   max-width: 50%;
   margin-top: -12rem;
   margin-left: -2rem;
 }
+
 .form-two-group p {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    text-align: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .socials-group{
- margin-top: 5rem;
- margin-left: -15rem;
+  margin-top: 5rem;
+  margin-left: -15rem;
 }
 
 h2 {
@@ -86,5 +88,20 @@ h2 {
   font-family: $font-subtitle
 }
 
+/* ⬇️ Marquee spacing */
+.marquee {
+  margin-top: 18rem;  // ← ajusta qué tan abajo empieza el marquee
+  margin-bottom: 5rem; // ← espacio entre el marquee y las project cards
+}
+
+/* ⬇️ Contenedor de ProjectCardStack */
+.home-projects {
+  width: 100%;
+  min-height: 100vh;              // ← controla cuánta altura tiene la sección de proyectos
+  display: flex;
+  justify-content: center;       // ← centra el ProjectCardStack horizontalmente
+  align-items: center;           // ← centra el ProjectCardStack verticalmente
+  margin-top: 1rem;              // ← empuja todo el bloque de proyectos más abajo si lo necesitas
+}
 
 @import './Homemedia.scss';
