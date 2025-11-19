@@ -6,7 +6,7 @@ import LinkedInSVG from '../../../../assets/LinkedIn.svg';
 import BehanceSVG from '../../../../assets/behance.svg';
 
 const SocialMediaLinks = () => {
-  // 2. Define the data for your links
+  
   const socialLinks = [
     {
       id: 1,
@@ -16,13 +16,13 @@ const SocialMediaLinks = () => {
     },
     {
       id: 2,
-      href: 'https://https://github.com/hgall3', // Example GitHub URL
+      href: 'https://https://github.com/hgall3', 
       svgSrc: GithubSVG,
       altText: 'GitHub',
     },
     {
       id: 3,
-      href: 'https://www.linkedin.com/in/gabrielagallegosanda/', // Example LinkedIn URL
+      href: 'https://www.linkedin.com/in/gabrielagallegosanda/', 
       svgSrc: LinkedInSVG,
       altText: 'LinkedIn',
     },
@@ -30,7 +30,7 @@ const SocialMediaLinks = () => {
 
   return (
     <div className="social-media-container">
-      {/* 3. Map over the data to render a SocialLink for each item */}
+      
       {socialLinks.map((link) => (
         <SocialLink
           key={link.id}

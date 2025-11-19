@@ -1,11 +1,11 @@
 .project-card-stack {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem; // espacio entre tarjetas
+  gap: 2.5rem; 
   width: 80%;
 }
 @media (min-width: 768px) {
   .project-card-stack {
-    gap: 3.5rem; // más espacio en pantallas más grandes
+    gap: 3.5rem; 
   }
 }

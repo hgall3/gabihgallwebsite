@@ -1,11 +1,14 @@
-// ProjectCardStack.jsx
+
 import React from "react";
 import ProjectCard from "../ProjectCard/ProjectCard";
-import "./ProjectCardStack.scss"; // estilos opcionales
+import "./ProjectCardStack.scss"; 
 import CodeHappen from "../../assets/CodeHappens.svg";
+import DreamyApp from "../../assets/GardenOfThoughts.png";
+import PortfolioImg from "../../assets/try.png"
+import Berlin from "../../assets/UselesslyTrue.png"
 
 export default function ProjectCardStack() {
-  // Aquí defines las tarjetas con sus props personalizados
+  
   const cards = [
     {
       id: 1,
@@ -21,15 +24,15 @@ export default function ProjectCardStack() {
     },
     {
       id: 2,
-      title: "Dreamy App",
-      year: "2024",
-      role: "Product Design · Motion UI",
+      title: "Garden of Thoughts",
+      year: "2025",
+      role: "UI/UX Design· Frontend Dev",
       description:
         "App conceptual sobre wellness y visualización emocional.",
-      imageSrc: "/images/projects/dreamy.png",
+      imageSrc: DreamyApp,
       imageAlt: "Dreamy app UI",
-      cardBgColor: "#E8E2FF",
-      leftBgColor: "#A46BA7",
+      cardBgColor: "#959595",
+      leftBgColor: "#AEA2DA",
     },
     {
       id: 3,
@@ -38,22 +41,22 @@ export default function ProjectCardStack() {
       role: "Branding · Frontend Dev",
       description:
         "Rediseño completo del portfolio personal con animación y storytelling.",
-      imageSrc: "/images/projects/portfolio.png",
+      imageSrc: PortfolioImg,
       imageAlt: "Portfolio mockup",
-      cardBgColor: "#EEECEE",
-      leftBgColor: "#B890B8",
+      cardBgColor: "#959595",
+      leftBgColor: "#A5B2F8",
     },
     {
       id: 4,
-      title: "Berlin Culture Map",
+      title: "Uselessly true",
       year: "2023",
-      role: "DataViz · UX Research",
+      role: "UI/UX Design· Frontend Dev",
       description:
         "Mapa interactivo de arte urbano en Berlín con capas dinámicas.",
-      imageSrc: "/images/projects/berlinmap.png",
+      imageSrc: Berlin,
       imageAlt: "Berlin culture map",
-      cardBgColor: "#D9D9D9",
-      leftBgColor: "#8B6C8B",
+      cardBgColor: "#959595",
+      leftBgColor: "#8396d4ff",
     },
   ];
 
