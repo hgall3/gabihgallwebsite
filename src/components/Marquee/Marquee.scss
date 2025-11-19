@@ -12,12 +12,12 @@
   width: max-content;       /* ← PERMITE QUE EL TRACK SEA MÁS ANCHO QUE LA PANTALLA */
   will-change: transform;
 
-  animation: marquee-move 18s linear infinite;
-  /* ← ANIMACIÓN INFINITA SIN INICIO NI FIN */
+  animation: marquee-move 20s linear infinite;
+  
 }
 
 .marquee-item {
-  width: 300px;    /* tamaño del svg */
+  width: 380px;    /* tamaño del svg */
   flex-shrink: 0;  /* evita que se achique */
   opacity: 0.9;
 }

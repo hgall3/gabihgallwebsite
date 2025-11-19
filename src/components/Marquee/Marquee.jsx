@@ -6,7 +6,7 @@ export default function Marquee() {
   return (
     <div className="marquee">
       <div className="marquee-track">
-        {/* TRACK 1 */}
+        
         <img src={ProjectSVG} alt="projects" className="marquee-item" />
         <img src={ProjectSVG} alt="projects" className="marquee-item" />
         <img src={ProjectSVG} alt="projects" className="marquee-item" />
@@ -14,7 +14,7 @@ export default function Marquee() {
         <img src={ProjectSVG} alt="projects" className="marquee-item" />
         <img src={ProjectSVG} alt="projects" className="marquee-item" />
 
-        {/* TRACK 2 (duplicado para el loop infinito) */}
+        
         <img src={ProjectSVG} alt="projects" className="marquee-item" />
         <img src={ProjectSVG} alt="projects" className="marquee-item" />
         <img src={ProjectSVG} alt="projects" className="marquee-item" />
