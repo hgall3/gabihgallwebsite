@@ -14,7 +14,7 @@ One of the core parts of the project was developing the **brand identity (GabiHg
 ---
 
 ## 📄 Landing Page 
-<img width="807" height="819" alt="Screenshot" src="/src/assets/FINAL SPRINT 1.png" />
+<img width="auto" height="819" alt="Screenshot" src="/src/assets/FINAL SPRINT 1.png" />
 
 
 # :sparkler: How to excute
