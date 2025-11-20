@@ -137,16 +137,20 @@ export default function ProjectCardStack() {
   
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 4;
-
   const totalPages = Math.ceil(cards.length / cardsPerPage) || 1;
   const startIndex = (currentPage - 1) * cardsPerPage;
   const currentCards = cards.slice(startIndex, startIndex + cardsPerPage);
-
   const handlePageChange = (page) => {
     if (page < 1 || page > totalPages) return;
     setCurrentPage(page);
   };
+  useEffect(() => {
+  const newTotalPages = Math.ceil(cards.length / cardsPerPage) || 1;
 
+  if (currentPage > newTotalPages) {
+    setCurrentPage(newTotalPages);
+  }
+}, [cards.length, cardsPerPage, currentPage]);
   
   if (loading) {
     return (
