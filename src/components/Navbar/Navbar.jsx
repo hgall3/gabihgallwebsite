@@ -38,15 +38,11 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-
-        {/* DESKTOP BUTTONS */}
         <div className="navbar-links">
           <InfoButton label="About Me" onClick={handleAbout} />
           <InfoButton label="Portfolio" onClick={handlePortfolio} />
           <InfoButton label="Contact" onClick={handleContact} />
         </div>
-
-        {/* MOBILE MENU BUTTON */}
         <button
           className="navbar-menu-btn"
           aria-label="Open menu"
@@ -55,8 +51,6 @@ export default function Navbar() {
           ☰
         </button>
       </div>
-
-      {/* MOBILE DROPDOWN MENU */}
       {isMenuOpen && (
         <div className="navbar-mobile-menu">
           <InfoButton label="About Me" onClick={handleAbout} />

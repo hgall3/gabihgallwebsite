@@ -9,7 +9,7 @@ export default function Admin({ isOpen, onClose }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const correctPassword = "123"; // ⬅ tu contraseña actual
+  const correctPassword = "123"; 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ export default function Admin({ isOpen, onClose }) {
       setIsAdmin(true);
       setError("");
       setPassword("");
-      onClose(); // cierra modal
+      onClose(); 
     } else {
       setError("Incorrect password");
     }

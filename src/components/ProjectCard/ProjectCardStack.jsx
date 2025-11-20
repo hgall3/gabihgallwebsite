@@ -3,9 +3,10 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 import Pagination from "../Pagination/Pagination";
 import CRUDButtons from "../Buttons/CRUDButtons/CRUDButtons";
 import ProjectCRUDModal from "../CRUD/ProjectCRUDModal";
+import WarningModal from "../Modal/WarningModal";
+import SuccessModal from "../Modal/SuccessModal";
 import { useAdmin } from "../../context/AdminContext";
 import "./ProjectCardStack.scss";
-
 import CodeHappen from "../../assets/CodeHappens.svg";
 import DreamyApp from "../../assets/GardenOfThoughts.png";
 import PortfolioImg from "../../assets/try.png";
@@ -13,6 +14,7 @@ import Berlin from "../../assets/UselesslyTrue.png";
 
 export default function ProjectCardStack() {
   const { isAdmin } = useAdmin();
+
   const initialCards = [
     {
       id: 1,
@@ -210,14 +212,17 @@ export default function ProjectCardStack() {
 
   const [cards, setCards] = useState(initialCards);
 
- 
   const [isCrudOpen, setIsCrudOpen] = useState(false);
   const [crudMode, setCrudMode] = useState("create");
   const [selectedCard, setSelectedCard] = useState(null);
 
-  // -----------------------------------------
-  // CRUD ACTIONS
-  // -----------------------------------------
+  const [showDeleteWarning, setShowDeleteWarning] = useState(false);
+  const [cardToDelete, setCardToDelete] = useState(null);
+
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+
+
   const openCreateModal = () => {
     setCrudMode("create");
     setSelectedCard(null);
@@ -237,21 +242,39 @@ export default function ProjectCardStack() {
           c.id === selectedCard.id ? { ...c, ...data } : c
         )
       );
+      setSuccessMessage("Project updated successfully");
+      setShowSuccess(true);
     } else {
       setCards((prev) => [
         ...prev,
         { id: Date.now(), ...data },
       ]);
+      setSuccessMessage("Project created successfully");
+      setShowSuccess(true);
     }
   };
 
-  const deleteCard = (id) => {
-    setCards((prev) => prev.filter((c) => c.id !== id));
+  const askDeleteCard = (card) => {
+    setCardToDelete(card);
+    setShowDeleteWarning(true);
   };
 
-  // -----------------------------------------
-  // PAGINATION
-  // -----------------------------------------
+  const confirmDeleteCard = () => {
+    if (!cardToDelete) return;
+
+    setCards((prev) => prev.filter((c) => c.id !== cardToDelete.id));
+    setCardToDelete(null);
+    setShowDeleteWarning(false);
+
+    setSuccessMessage("Project deleted successfully");
+    setShowSuccess(true);
+  };
+
+  const cancelDelete = () => {
+    setCardToDelete(null);
+    setShowDeleteWarning(false);
+  };
+
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 4;
 
@@ -265,9 +288,6 @@ export default function ProjectCardStack() {
     setCurrentPage(page);
   };
 
-  // -----------------------------------------
-  // RENDER
-  // -----------------------------------------
   return (
     <div className="project-card-stack-wrapper">
       <div className="project-card-stack">
@@ -280,7 +300,7 @@ export default function ProjectCardStack() {
               <CRUDButtons
                 onEdit={() => openEditModal(card)}
                 onCreate={openCreateModal}
-                onDelete={() => deleteCard(card.id)}
+                onDelete={() => askDeleteCard(card)}
               />
             )}
           />
@@ -294,11 +314,31 @@ export default function ProjectCardStack() {
       />
 
       <ProjectCRUDModal
+        key={crudMode === "edit" ? selectedCard?.id ?? "new" : "new"}
         isOpen={isCrudOpen}
         onClose={() => setIsCrudOpen(false)}
         mode={crudMode}
         initialData={selectedCard}
-        onSave={handleSave}
+         onSave={handleSave}
+      />
+
+
+      <WarningModal
+        isOpen={showDeleteWarning}
+        title="Delete project?"
+        message={
+          cardToDelete
+            ? `Are you sure you want to delete "${cardToDelete.title}"? This action cannot be undone.`
+            : "Are you sure you want to delete this project?"
+        }
+        onCancel={cancelDelete}
+        onConfirm={confirmDeleteCard}
+      />
+
+      <SuccessModal
+        isOpen={showSuccess}
+        message={successMessage}
+        onClose={() => setShowSuccess(false)}
       />
     </div>
   );

@@ -1,9 +1,9 @@
-/* Desktop and tablet: hide mobile text */
+
 .home-text-mobile {
   display: none;
 }
 
-/* Tablet: shrink elements, keep row layout */
+
 @media (min-width: 481px) and (max-width: 1024px) {
   .home-hero {
     min-height: 70vh;

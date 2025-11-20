@@ -1,4 +1,3 @@
-// ProjectCard.jsx
 import React from "react";
 import SocialMediaLinks from "../../components/Buttons/Socials/SocialMediaLinks/SocialMediaLinks";
 import "./ProjectCard.scss";

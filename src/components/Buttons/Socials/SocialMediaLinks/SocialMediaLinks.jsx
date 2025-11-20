@@ -10,7 +10,7 @@ const SocialMediaLinks = () => {
   const socialLinks = [
     {
       id: 1,
-      href: 'https://www.instagram.com/g.hgall/',
+      href: 'https://www.behance.net/GagallegosA',
       svgSrc: BehanceSVG,
       altText: 'Behance',
     },

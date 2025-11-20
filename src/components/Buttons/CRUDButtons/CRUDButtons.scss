@@ -1,13 +1,6 @@
 .crud-buttons {
   display: flex;
-  gap: 0.5rem; /* separa los íconos entre sí */
-
-  /* 
-    Más adelante puedes ajustar:
-    justify-content
-    flex-direction
-    tamaños
-  */
+  gap: 1rem; 
 }
 
 .crud-btn {
@@ -15,11 +8,8 @@
   border: none;
   padding: 0;
   cursor: pointer;
-
-  /* Tamaño del botón clickeable */
   width: 28px;
   height: 28px;
-
   display: flex;
   align-items: center;
   justify-content: center;

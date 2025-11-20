@@ -3,7 +3,6 @@
 .navbar {
   width: 100%;
   padding: 1rem 2rem;
-  //position: fixed;//
   top: 0;
   left: 0;
   z-index: 999;
@@ -24,7 +23,7 @@
     justify-content: flex-end;
   }
 
-  /* DESKTOP BUTTONS */
+  
   .navbar-links {
     display: flex;
     gap: 1rem;
@@ -34,7 +33,7 @@
     }
   }
 
-  /* HAMBURGER BUTTON */
+  
   .navbar-menu-btn {
     background: transparent;
     border: none;
@@ -48,7 +47,7 @@
     }
   }
 
-  /* MOBILE MENU */
+ 
   .navbar-mobile-menu {
     display: flex;
     flex-direction: column;

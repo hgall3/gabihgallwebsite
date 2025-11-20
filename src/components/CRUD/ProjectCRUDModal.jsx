@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Modal from "../Modal/Modal";
 import "./ProjectCRUDModal.scss";
 
 export default function ProjectCRUDModal({
   isOpen,
   onClose,
-  mode = "create",      // "create" | "edit"
-  initialData = {},     // datos de la card cuando editas
-  onSave,               // callback para guardar
+  mode = "create",      
+  initialData = {},     
+  onSave,               
 }) {
-  // Valores por defecto del formulario
+  
   const emptyForm = {
     title: "",
     year: "",
@@ -20,12 +20,10 @@ export default function ProjectCRUDModal({
     leftBgColor: "#B890B8",
   };
 
-  const [formData, setFormData] = useState(emptyForm);
-
-  // Cuando se abre el modal o cambia initialData, rellenamos el formulario
-  useEffect(() => {
+  
+  const [formData, setFormData] = useState(() => {
     if (mode === "edit" && initialData) {
-      setFormData({
+      return {
         title: initialData.title || "",
         year: initialData.year || "",
         role: initialData.role || "",
@@ -33,11 +31,12 @@ export default function ProjectCRUDModal({
         imageSrc: initialData.imageSrc || "",
         cardBgColor: initialData.cardBgColor || "#959595",
         leftBgColor: initialData.leftBgColor || "#B890B8",
-      });
-    } else if (mode === "create") {
-      setFormData(emptyForm);
+      };
     }
-  }, [mode, initialData, isOpen]);
+    return emptyForm;
+  });
+
+  const [errors, setErrors] = useState({}); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -46,12 +45,45 @@ export default function ProjectCRUDModal({
       ...prev,
       [name]: value,
     }));
+
+    
+    if (errors[name]) {
+      setErrors((prev) => {
+        const clone = { ...prev };
+        delete clone[name];
+        return clone;
+      });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // onSave decide qué hacer con los datos en el padre (create o edit)
+    const newErrors = {};
+
+    if (!formData.title.trim()) {
+      newErrors.title = "Title is required";
+    }
+
+    if (!formData.year.trim()) {
+      newErrors.year = "Year is required";
+    }
+
+    if (!formData.role.trim()) {
+      newErrors.role = "Role is required";
+    }
+
+    if (!formData.description.trim()) {
+      newErrors.description = "Description is required";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return; // no guardes si hay errores
+    }
+
+    setErrors({});
+
     if (onSave) {
       onSave(formData);
     }
@@ -76,8 +108,10 @@ export default function ProjectCRUDModal({
                 className="crud-modal__input"
                 value={formData.title}
                 onChange={handleChange}
-                required
               />
+              {errors.title && (
+                <p className="crud-error">{errors.title}</p>
+              )}
             </label>
 
             <label className="crud-modal__label">
@@ -90,6 +124,9 @@ export default function ProjectCRUDModal({
                 onChange={handleChange}
                 placeholder="2025"
               />
+              {errors.year && (
+                <p className="crud-error">{errors.year}</p>
+              )}
             </label>
           </div>
 
@@ -103,6 +140,9 @@ export default function ProjectCRUDModal({
               onChange={handleChange}
               placeholder="UI/UX · Frontend Dev"
             />
+            {errors.role && (
+              <p className="crud-error">{errors.role}</p>
+            )}
           </label>
 
           <label className="crud-modal__label">
@@ -114,6 +154,9 @@ export default function ProjectCRUDModal({
               onChange={handleChange}
               rows={4}
             />
+            {errors.description && (
+              <p className="crud-error">{errors.description}</p>
+            )}
           </label>
 
           <label className="crud-modal__label">
@@ -126,6 +169,7 @@ export default function ProjectCRUDModal({
               onChange={handleChange}
               placeholder="/src/assets/..."
             />
+            
           </label>
 
           <div className="crud-modal__row">

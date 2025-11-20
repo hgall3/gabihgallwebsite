@@ -6,12 +6,6 @@ export default function Modal({ isOpen, onClose, children, width = "auto" }) {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      
-      {/* 
-        modal-container tiene blur + efecto macOS.
-        width es personalizable: "auto", "400px", "80%", etc.
-        Comentado abajo para que puedas cambiarlo cuando quieras.
-      */}
       <div
         className="modal-container"
         style={{ width }}

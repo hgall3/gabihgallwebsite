@@ -1,0 +1,44 @@
+.warning-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #ffffff;
+
+  &__title {
+    margin: 0;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  &__message {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  &__btn {
+    padding: 0.55rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    &--secondary {
+      background: #3a3a3a;
+      color: #ffffff;
+    }
+
+    &--primary {
+      background: #ff7e7e;
+      color: #ffffff;
+    }
+  }
+}

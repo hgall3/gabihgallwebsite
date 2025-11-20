@@ -1,40 +1,33 @@
-/* Fondo: ocupa todo el viewport */
+
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;      /* <-- modal ocupa todo el viewport */
-  height: 100vh;     /* igual */
-  background: rgba(0, 0, 0, 0.45); /* oscurito y suave */
-  backdrop-filter: blur(6px);      /* <-- efecto macOS blur */
+  width: 100vw;      
+  height: 100vh;     
+  background: rgba(0, 0, 0, 0.45); 
+  backdrop-filter: blur(6px);      
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
 }
 
-/* Caja principal del modal */
+
 .modal-container {
-  background: rgba(255, 255, 255, 0.12);   /* glass effect */
-  backdrop-filter: blur(15px);             /* efecto de cristal */
+  background: rgba(255, 255, 255, 0.12);   
+  backdrop-filter: blur(15px);             
   border-radius: 20px;
   padding: 2.5rem;
   color: white;
   box-shadow: 0 0 20px rgba(0,0,0,0.25);
 
-  /* 
-    Para cambiar tamaño:
-    width: 400px; 
-    width: 80%; 
-    width: clamp(300px, 60%, 600px);
-    Pero será manejado por el prop `width` de Modal.jsx 
-  */
+  
 
-  /* Animación suave */
+  
   animation: fadeIn 0.2s ease-out;
 }
 
-/* Fade pequeño */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
