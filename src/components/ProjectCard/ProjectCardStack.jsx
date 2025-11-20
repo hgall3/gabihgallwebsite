@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import Pagination from "../Pagination/Pagination";
+import CRUDButtons from "../Buttons/CRUDButtons/CRUDButtons";
+import { useAdmin } from "../../context/AdminContext";
 import "./ProjectCardStack.scss";
+
 import CodeHappen from "../../assets/CodeHappens.svg";
 import DreamyApp from "../../assets/GardenOfThoughts.png";
 import PortfolioImg from "../../assets/try.png";
 import Berlin from "../../assets/UselesslyTrue.png";
 
 export default function ProjectCardStack() {
+  const { isAdmin } = useAdmin();
+
+  // 🔥 TODAS LAS 16 TARJETAS COMPLETAS
   const cards = [
     {
       id: 1,
@@ -28,7 +34,7 @@ export default function ProjectCardStack() {
       role: "UI/UX Design· Frontend Dev",
       description: "App conceptual sobre wellness y visualización emocional.",
       imageSrc: DreamyApp,
-      imageAlt: "Dreamy app UI",
+      imageAlt: "Garden app UI",
       cardBgColor: "#959595",
       leftBgColor: "#AEA2DA",
     },
@@ -57,16 +63,16 @@ export default function ProjectCardStack() {
       leftBgColor: "#8396D4",
     },
 
-    // EXTRA CARDS (12 new)
+    // --- MOCK 12 EXTRA ---
     {
       id: 5,
       title: "Dream Tracker",
       year: "2024",
       role: "App Concept · UI/UX",
       description:
-        "Aplicación conceptual que registra patrones de sueños y estados emocionales.",
+        "App conceptual que registra patrones de sueños y estados emocionales.",
       imageSrc: DreamyApp,
-      imageAlt: "Dream tracker mockup",
+      imageAlt: "Dream tracker preview",
       cardBgColor: "#959595",
       leftBgColor: "#D5A6BD",
     },
@@ -88,9 +94,9 @@ export default function ProjectCardStack() {
       year: "2024",
       role: "Product Design · Branding",
       description:
-        "Herramienta visual para capturar ideas de forma creativa y organizada.",
+        "Herramienta visual para capturar ideas de forma creativa.",
       imageSrc: PortfolioImg,
-      imageAlt: "Visual Notes concept",
+      imageAlt: "Visual Notes UI",
       cardBgColor: "#959595",
       leftBgColor: "#BBD7F8",
     },
@@ -102,20 +108,20 @@ export default function ProjectCardStack() {
       description:
         "Exploración sensorial que mezcla color, música y memoria.",
       imageSrc: CodeHappen,
-      imageAlt: "Synesthesia lab concept",
+      imageAlt: "Synesthesia lab",
       cardBgColor: "#959595",
       leftBgColor: "#C7A1F2",
     },
-
-    // NEW 12 MOCK CARDS
     {
       id: 9,
       title: "Mind Journey",
       year: "2024",
       role: "UI Design · Prototype",
-      description: "Experiencia interactiva que guía al usuario por estados mentales.",
+      description:
+        "Experiencia interactiva sobre estados mentales.",
       imageSrc: DreamyApp,
-      imageAlt: "Mind Journey preview",
+      imageAlt: "Mind Journey",
+      cardBgColor: "#959595",
       leftBgColor: "#E8C8DC",
     },
     {
@@ -123,9 +129,11 @@ export default function ProjectCardStack() {
       title: "Digital Bloom",
       year: "2023",
       role: "Web Design · Branding",
-      description: "Sitio web floral animado inspirado en crecimiento personal.",
+      description:
+        "Sitio web floral animado inspirado en crecimiento personal.",
       imageSrc: PortfolioImg,
-      imageAlt: "Digital Bloom preview",
+      imageAlt: "Digital Bloom",
+      cardBgColor: "#959595",
       leftBgColor: "#EBA6BD",
     },
     {
@@ -133,9 +141,11 @@ export default function ProjectCardStack() {
       title: "Neon Path",
       year: "2025",
       role: "Visual Design · Motion",
-      description: "Interfaz luminosa con animaciones tipo neón.",
+      description:
+        "Interfaz luminosa con animaciones tipo neón.",
       imageSrc: CodeHappen,
-      imageAlt: "Neon Path mockup",
+      imageAlt: "Neon Path",
+      cardBgColor: "#959595",
       leftBgColor: "#FF87D7",
     },
     {
@@ -144,9 +154,10 @@ export default function ProjectCardStack() {
       year: "2024",
       role: "Product Design · UI/UX",
       description:
-        "App conceptual sobre registros de audio y recuerdos.",
+        "App conceptual sobre recuerdos en audio.",
       imageSrc: Berlin,
-      imageAlt: "Echoes App preview",
+      imageAlt: "Echoes app",
+      cardBgColor: "#959595",
       leftBgColor: "#D8B3F0",
     },
     {
@@ -155,9 +166,10 @@ export default function ProjectCardStack() {
       year: "2023",
       role: "Illustration · UI",
       description:
-        "Interfaz calmada inspirada en mindfulness y silencio digital.",
+        "Interfaz calmada inspirada en mindfulness.",
       imageSrc: DreamyApp,
-      imageAlt: "Quiet space concept",
+      imageAlt: "Quiet space",
+      cardBgColor: "#959595",
       leftBgColor: "#C4D5FA",
     },
     {
@@ -166,9 +178,10 @@ export default function ProjectCardStack() {
       year: "2025",
       role: "Web · UI/UX",
       description:
-        "Sistema visual inspirado en órbitas, geometría y movimiento circular.",
+        "Sistema visual inspirado en órbitas y movimiento circular.",
       imageSrc: PortfolioImg,
-      imageAlt: "Orbit UI preview",
+      imageAlt: "Orbit UI",
+      cardBgColor: "#959595",
       leftBgColor: "#A7CFFC",
     },
     {
@@ -177,9 +190,10 @@ export default function ProjectCardStack() {
       year: "2024",
       role: "Frontend · Data Viz",
       description:
-        "Mapa experimental sobre estructuras, caminos y tensión narrativa.",
+        "Mapa experimental sobre estructuras narrativas.",
       imageSrc: Berlin,
-      imageAlt: "Monolith map preview",
+      imageAlt: "Monolith map",
+      cardBgColor: "#959595",
       leftBgColor: "#90A7F0",
     },
     {
@@ -188,19 +202,19 @@ export default function ProjectCardStack() {
       year: "2023",
       role: "App Design · Wellness",
       description:
-        "Espacio interior digital para cultivar emociones positivas.",
+        "Espacio digital para cultivar emociones positivas.",
       imageSrc: DreamyApp,
-      imageAlt: "Inner garden mockup",
+      imageAlt: "Inner garden",
+      cardBgColor: "#959595",
       leftBgColor: "#E2A4C7",
     },
   ];
 
-  
+  // PAGINATION
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 4;
 
   const totalPages = Math.ceil(cards.length / cardsPerPage);
-
   const startIndex = (currentPage - 1) * cardsPerPage;
   const currentCards = cards.slice(startIndex, startIndex + cardsPerPage);
 
@@ -213,7 +227,12 @@ export default function ProjectCardStack() {
     <div className="project-card-stack-wrapper">
       <div className="project-card-stack">
         {currentCards.map((card) => (
-          <ProjectCard key={card.id} {...card} />
+          <ProjectCard
+            key={card.id}
+            {...card}
+            isAdmin={isAdmin}
+            crudComponent={CRUDButtons}
+          />
         ))}
       </div>
 
