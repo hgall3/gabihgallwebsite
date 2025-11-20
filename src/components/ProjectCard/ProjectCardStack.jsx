@@ -13,18 +13,13 @@ const API_URL =
 
 export default function ProjectCardStack() {
   const { isAdmin } = useAdmin();
-
-  
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const [isCrudOpen, setIsCrudOpen] = useState(false);
   const [crudMode, setCrudMode] = useState("create");
   const [selectedCard, setSelectedCard] = useState(null);
-
   const [showDeleteWarning, setShowDeleteWarning] = useState(false);
   const [cardToDelete, setCardToDelete] = useState(null);
-
   const [showSuccess, setShowSuccess] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
 

@@ -5,12 +5,9 @@ import "./Admin.scss";
 
 export default function Admin({ isOpen, onClose }) {
   const { isAdmin, setIsAdmin } = useAdmin();
-
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
   const correctPassword = "123"; 
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
