@@ -4,7 +4,7 @@ import "./AdminButton.scss";
 export default function AdminButton({ onClick }) {
   return (
     <button className="admin-button" onClick={onClick}>
-      admin
+      .
     </button>
   );
 }
