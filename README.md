@@ -1,16 +1,48 @@
-# React + Vite
+# 👩‍💻 Gabi Hgall — Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+As part of my final personal project for the **Femcoders Bootcamp**, I built a website to showcase my work to potential clients and employers.  
+This portfolio brings together projects from **UX design, interior design, brand design, events & workshops**, and even **psychology papers** — a full snapshot of my professional journey.
 
-Currently, two official plugins are available:
+The website includes:
+- A **contact form** for easy communication  
+- An **admin view** protected by a password  
+- A **CRUD panel** where I can create, edit, and delete projects  
+- Integration with **MockAPI**, where all project data is stored  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+One of the core parts of the project was developing the **brand identity (GabiHgall)** and implementing the full front-end of the website.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📄 Landing Page 
+<img width="807" height="819" alt="Screenshot" src="/src/assets/FINAL SPRINT 1.png" />
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# :sparkler: How to excute
+clone this repo in terminal
+```
+git clone https://github.com/hgall3/gabihgallwebsite.git
+```
+move to the repo that cloned
+
+```
+cd gabihgallwebsite
+```
+then 
+```
+npm install
+npm run dev
+```
+
+---
+
+## 🛠️ Tools & Technologies
+- React.js 19  
+- JavaScript (ES6+)  
+- React Router DOM  
+- Sass  
+- Figma  
+- Adobe Illustrator  
+- Adobe Photoshop  
+
+
+
