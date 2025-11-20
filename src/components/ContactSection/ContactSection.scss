@@ -1,0 +1,34 @@
+.contact-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: left;
+  position: relative;
+  
+}
+.talk{
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+}
+.contact-section__left {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: white;
+  margin-left: 2.5rem ;
+}
+
+.contact-section__center {
+  text-align: center;
+  flex: 1;
+}
+
+.contact-section__center h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-section__cta-wrapper {
+  margin-top: 1rem;
+}

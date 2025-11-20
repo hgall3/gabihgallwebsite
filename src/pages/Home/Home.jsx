@@ -8,6 +8,7 @@ import SocialMediaLinks from "../../components/Buttons/Socials/SocialMediaLinks/
 import Marquee from "../../components/Marquee/Marquee";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import ProjectCardStack from "../../components/ProjectCard/ProjectCardStack";
+import ContactSection from "../../components/ContactSection/ContactSection";
 import "./Home.scss";
 
 export default function Home() {
@@ -46,6 +47,7 @@ export default function Home() {
           <ProjectCardStack/>  
         </div>
       </DarkBackground>
+      <ContactSection />
     </>
   );
 }
