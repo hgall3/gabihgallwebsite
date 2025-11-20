@@ -5,13 +5,11 @@ import "./Navbar.scss";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
- 
   const handleAbout = () => {
     const section = document.querySelector(".home-next-section");
     if (!section) return;
 
-    const offset = -157
-    ; 
+    const offset = -157;
 
     const sectionTop =
       section.getBoundingClientRect().top + window.scrollY + offset;
@@ -30,8 +28,19 @@ export default function Navbar() {
   };
 
   const handleContact = () => {
-    const openModalEvent = new CustomEvent("open-contact-modal");
-    window.dispatchEvent(openModalEvent);
+    
+    const section = document.querySelector("#contact-section");
+    if (!section) return;
+
+    const offset = 14;
+    const sectionTop =
+      section.getBoundingClientRect().top + window.scrollY + offset;
+
+    window.scrollTo({
+      top: sectionTop,
+      behavior: "smooth",
+    });
+
     setIsMenuOpen(false);
   };
 
@@ -43,6 +52,7 @@ export default function Navbar() {
           <InfoButton label="Portfolio" onClick={handlePortfolio} />
           <InfoButton label="Contact" onClick={handleContact} />
         </div>
+
         <button
           className="navbar-menu-btn"
           aria-label="Open menu"
@@ -51,6 +61,7 @@ export default function Navbar() {
           ☰
         </button>
       </div>
+
       {isMenuOpen && (
         <div className="navbar-mobile-menu">
           <InfoButton label="About Me" onClick={handleAbout} />

@@ -47,7 +47,11 @@ export default function Home() {
           <ProjectCardStack/>  
         </div>
       </DarkBackground>
+
+      <div id="contact-section">
       <ContactSection />
+      </div>
+
     </>
   );
 }
