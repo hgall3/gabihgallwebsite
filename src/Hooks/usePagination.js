@@ -1,24 +1,30 @@
-import { useState, useEffect } from "react";
+// usePagination.js
+import { useState } from "react";
 
-export function usePagination(items, itemsPerPage = 4) {
-  const [currentPage, setCurrentPage] = useState(1);
+export function usePagination(items = [], itemsPerPage = 4) {
+  // Estado: la página "deseada" por el usuario
+  const [rawPage, setRawPage] = useState(1);
 
-  const totalPages = Math.ceil(items.length / itemsPerPage) || 1;
+  const safeItems = Array.isArray(items) ? items : [];
+
+  const totalPages =
+    safeItems.length > 0 ? Math.ceil(safeItems.length / itemsPerPage) : 1;
+
+  // Página efectiva, siempre dentro de rango [1, totalPages]
+  const currentPage =
+    rawPage > totalPages ? totalPages : rawPage < 1 ? 1 : rawPage;
+
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = items.slice(startIndex, startIndex + itemsPerPage);
+  const currentItems = safeItems.slice(startIndex, startIndex + itemsPerPage);
 
   const handlePageChange = (page) => {
-    if (page < 1 || page > totalPages) return;
-    setCurrentPage(page);
+    setRawPage((prev) => {
+      const next = typeof page === "number" ? page : prev;
+      if (next < 1) return 1;
+      if (next > totalPages) return totalPages;
+      return next;
+    });
   };
-
-  // Ajustar si la página actual se queda fuera de rango al borrar
-  useEffect(() => {
-    const newTotalPages = Math.ceil(items.length / itemsPerPage) || 1;
-    if (currentPage > newTotalPages) {
-      setCurrentPage(newTotalPages);
-    }
-  }, [items.length, itemsPerPage, currentPage]);
 
   return {
     currentPage,
