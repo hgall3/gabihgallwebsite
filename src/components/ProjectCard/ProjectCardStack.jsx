@@ -191,7 +191,7 @@ export default function ProjectCardStack() {
 
         {cards.length === 0 && (
           <p className="no-projects">
-            No projects yet. Use admin mode to create your first one.
+            
           </p>
         )}
       </div>
