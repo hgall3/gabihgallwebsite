@@ -13,3 +13,18 @@
   display: flex;
   align-items: center;
 }
+.project-card-stack__toolbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.project-card-stack__create-btn {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #ffffff55;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
