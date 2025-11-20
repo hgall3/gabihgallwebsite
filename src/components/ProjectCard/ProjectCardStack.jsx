@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import Pagination from "../Pagination/Pagination";
 import CRUDButtons from "../Buttons/CRUDButtons/CRUDButtons";
+import ProjectCRUDModal from "../CRUD/ProjectCRUDModal";
 import { useAdmin } from "../../context/AdminContext";
 import "./ProjectCardStack.scss";
 
@@ -12,9 +13,7 @@ import Berlin from "../../assets/UselesslyTrue.png";
 
 export default function ProjectCardStack() {
   const { isAdmin } = useAdmin();
-
-  // 🔥 TODAS LAS 16 TARJETAS COMPLETAS
-  const cards = [
+  const initialCards = [
     {
       id: 1,
       title: "Code Happen",
@@ -63,7 +62,6 @@ export default function ProjectCardStack() {
       leftBgColor: "#8396D4",
     },
 
-    // --- MOCK 12 EXTRA ---
     {
       id: 5,
       title: "Dream Tracker",
@@ -210,11 +208,55 @@ export default function ProjectCardStack() {
     },
   ];
 
+  const [cards, setCards] = useState(initialCards);
+
+ 
+  const [isCrudOpen, setIsCrudOpen] = useState(false);
+  const [crudMode, setCrudMode] = useState("create");
+  const [selectedCard, setSelectedCard] = useState(null);
+
+  // -----------------------------------------
+  // CRUD ACTIONS
+  // -----------------------------------------
+  const openCreateModal = () => {
+    setCrudMode("create");
+    setSelectedCard(null);
+    setIsCrudOpen(true);
+  };
+
+  const openEditModal = (card) => {
+    setCrudMode("edit");
+    setSelectedCard(card);
+    setIsCrudOpen(true);
+  };
+
+  const handleSave = (data) => {
+    if (crudMode === "edit") {
+      setCards((prev) =>
+        prev.map((c) =>
+          c.id === selectedCard.id ? { ...c, ...data } : c
+        )
+      );
+    } else {
+      setCards((prev) => [
+        ...prev,
+        { id: Date.now(), ...data },
+      ]);
+    }
+  };
+
+  const deleteCard = (id) => {
+    setCards((prev) => prev.filter((c) => c.id !== id));
+  };
+
+  // -----------------------------------------
   // PAGINATION
+  // -----------------------------------------
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 4;
 
   const totalPages = Math.ceil(cards.length / cardsPerPage);
+
   const startIndex = (currentPage - 1) * cardsPerPage;
   const currentCards = cards.slice(startIndex, startIndex + cardsPerPage);
 
@@ -223,6 +265,9 @@ export default function ProjectCardStack() {
     setCurrentPage(page);
   };
 
+  // -----------------------------------------
+  // RENDER
+  // -----------------------------------------
   return (
     <div className="project-card-stack-wrapper">
       <div className="project-card-stack">
@@ -231,7 +276,13 @@ export default function ProjectCardStack() {
             key={card.id}
             {...card}
             isAdmin={isAdmin}
-            crudComponent={CRUDButtons}
+            crudComponent={() => (
+              <CRUDButtons
+                onEdit={() => openEditModal(card)}
+                onCreate={openCreateModal}
+                onDelete={() => deleteCard(card.id)}
+              />
+            )}
           />
         ))}
       </div>
@@ -240,6 +291,14 @@ export default function ProjectCardStack() {
         currentPage={currentPage}
         totalPages={totalPages}
         onChangePage={handlePageChange}
+      />
+
+      <ProjectCRUDModal
+        isOpen={isCrudOpen}
+        onClose={() => setIsCrudOpen(false)}
+        mode={crudMode}
+        initialData={selectedCard}
+        onSave={handleSave}
       />
     </div>
   );
