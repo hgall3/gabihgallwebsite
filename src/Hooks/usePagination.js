@@ -1,8 +1,8 @@
-// usePagination.js
+
 import { useState } from "react";
 
 export function usePagination(items = [], itemsPerPage = 4) {
-  // Estado: la página "deseada" por el usuario
+ 
   const [rawPage, setRawPage] = useState(1);
 
   const safeItems = Array.isArray(items) ? items : [];
@@ -10,7 +10,7 @@ export function usePagination(items = [], itemsPerPage = 4) {
   const totalPages =
     safeItems.length > 0 ? Math.ceil(safeItems.length / itemsPerPage) : 1;
 
-  // Página efectiva, siempre dentro de rango [1, totalPages]
+  
   const currentPage =
     rawPage > totalPages ? totalPages : rawPage < 1 ? 1 : rawPage;
 

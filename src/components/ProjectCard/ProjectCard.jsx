@@ -9,11 +9,11 @@ export default function ProjectCard({
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   imageSrc,
   imageAlt = "Project preview",
-  socialComponent: SocialComponent = SocialMediaLinks,
+  socialComponent: SocialComponent = null, 
   crudComponent: CrudComponent,
   isAdmin = false,
-  cardBgColor = "#959595",  
-  leftBgColor = "#B890B8",  
+  cardBgColor = "#959595",
+  leftBgColor = "#B890B8",
 }) {
   return (
     <article 
@@ -32,6 +32,7 @@ export default function ProjectCard({
       <div className="project-card__middle">
         <p className="project-card__description">{description}</p>
 
+        
         {SocialComponent && (
           <div className="project-card__socials">
             <SocialComponent />
