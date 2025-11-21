@@ -79,7 +79,7 @@ export default function ProjectCRUDModal({
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-      return; // no guardes si hay errores
+      return; 
     }
 
     setErrors({});

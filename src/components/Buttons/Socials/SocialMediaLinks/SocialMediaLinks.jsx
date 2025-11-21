@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialLink from '../Sociallink/SocialLink'; //error here why???
+import SocialLink from '../Sociallink/SocialLink'; 
 import InstagramSVG from '../../../../assets/ig.svg';
 import GithubSVG from '../../../../assets/github.svg';
 import LinkedInSVG from '../../../../assets/LinkedIn.svg';

@@ -29,10 +29,10 @@ export default function ContactModal({ isOpen, onClose }) {
 
     try {
       await emailjs.send(
-        "service_6zpys2f",   // <- Your EmailJS service ID
-        "template_unbtlwb",  // <- Your EmailJS template ID
+        "service_6zpys2f",   
+        "template_unbtlwb",  
         form,
-        "publicKey_hYWt2GR5f8MLwNpZt"  // <- Your EmailJS public key
+        "publicKey_hYWt2GR5f8MLwNpZt"  
       );
 
       setError("");
